@@ -1,2 +1,0 @@
-class Breed < ApplicationRecord
-end
