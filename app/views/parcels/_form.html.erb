@@ -29,6 +29,8 @@
   <div class="field">
     <%= form.label :market_value %>
     <%= form.number_field :market_value %>
+
+    <%= form.collection_select(:zip_code, Zip.all, :id, :name) %>
   </div>
 
   <div class="actions">
