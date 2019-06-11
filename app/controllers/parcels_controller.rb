@@ -4,7 +4,15 @@ class ParcelsController < ApplicationController
   # GET /parcels
   # GET /parcels.json
   def index
-    @parcels = Parcel.all
+    # @parcels = Parcel.all
+
+    if params[:sort_by]
+      @parcels = Parcel.all.sort_by(&params[:sort_by].to_sym)
+    elsif params[:breed_id]
+      @parcels = Parcel.find(params[:zip_code]).parcels
+    else
+      @parcels = Parcel.all
+    end
   end
 
   # GET /parcels/1
