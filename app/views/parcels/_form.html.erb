@@ -29,10 +29,6 @@
   <div class="field">
     <%= form.label :market_value %>
     <%= form.number_field :market_value %>
-
-    <!-- Zip Code drop-down -->
-    <%= form.collection_select(:zip_code, ZipCode.all, :zip_code, :zip_code) %>
-
   </div>
 
   <div class="actions">
