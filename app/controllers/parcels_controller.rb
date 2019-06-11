@@ -69,6 +69,6 @@ class ParcelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parcel_params
-      params.require(:parcel).permit(:parcel_number, :taxable_building, :taxable_land, :market_value)
+      params.require(:parcel).permit(:parcel_number, :taxable_building, :taxable_land, :market_value, :zip_code)
     end
 end

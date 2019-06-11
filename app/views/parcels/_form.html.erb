@@ -16,6 +16,11 @@
     <%= form.text_field :parcel_number %>
   </div>
 
+
+  <div class='field'>
+    <%= form.collection_select(:zip_code, ZipCode.all, :zip_code) %>
+  </div>
+
   <div class="field">
     <%= form.label :taxable_building %>
     <%= form.number_field :taxable_building %>
