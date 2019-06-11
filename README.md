@@ -1,3 +1,7 @@
+# Philadelphia Property Tax
+
+Ruby on Rails App for Citizen Insight into Philadelphia Property Tax Assessments
+
 # README
 
 This README would normally document whatever steps are necessary to get the
