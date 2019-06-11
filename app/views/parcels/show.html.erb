@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parcel number:</strong>
+  <%= @parcel.parcel_number %>
+</p>
+
+<p>
+  <strong>Taxable building:</strong>
+  <%= @parcel.taxable_building %>
+</p>
+
+<p>
+  <strong>Taxable land:</strong>
+  <%= @parcel.taxable_land %>
+</p>
+
+<p>
+  <strong>Market value:</strong>
+  <%= @parcel.market_value %>
+</p>
+
+<%= link_to 'Edit', edit_parcel_path(@parcel) %> |
+<%= link_to 'Back', parcels_path %>

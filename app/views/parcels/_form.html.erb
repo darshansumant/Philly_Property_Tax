@@ -1,0 +1,37 @@
+<%= form_with(model: parcel, local: true) do |form| %>
+  <% if parcel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parcel.errors.count, "error") %> prohibited this parcel from being saved:</h2>
+
+      <ul>
+      <% parcel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :parcel_number %>
+    <%= form.text_field :parcel_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taxable_building %>
+    <%= form.number_field :taxable_building %>
+  </div>
+
+  <div class="field">
+    <%= form.label :taxable_land %>
+    <%= form.number_field :taxable_land %>
+  </div>
+
+  <div class="field">
+    <%= form.label :market_value %>
+    <%= form.number_field :market_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

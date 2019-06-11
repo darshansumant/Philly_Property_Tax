@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parcel_number: MyString
+  taxable_building: 1
+  taxable_land: 1
+  market_value: 1
+
+two:
+  parcel_number: MyString
+  taxable_building: 1
+  taxable_land: 1
+  market_value: 1
