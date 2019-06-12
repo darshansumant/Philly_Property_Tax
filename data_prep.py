@@ -28,5 +28,5 @@ chosen_zips = df_subset.zip_code.value_counts()[:-10]
 # Output as CSV files to be import into the App Database
 df_subset[df_subset.zip_code.isin(list(chosen_zips.index))].to_csv('parcels_data.csv',
                                                                    index=False)
-chosen_zips.to_csv('zips_data.csv', header=['Description'],
-                   index=True, index_label='Name')
+chosen_zips.to_csv('zips_data.csv', header=['description'],
+                   index=True, index_label='name')

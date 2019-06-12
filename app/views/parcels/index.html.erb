@@ -6,33 +6,37 @@
 
 <h1>Parcels</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Parcel number</th>
-      <th>Taxable building</th>
-      <th>Taxable land</th>
-      <th>Market value</th>
-      <th>Zip Code</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Parcel number</th>
+          <th>Taxable building</th>
+          <th>Taxable land</th>
+          <th>Market value</th>
+          <th>Zip Code</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @parcels.each do |parcel| %>
-      <tr>
-        <td><%= parcel.parcel_number %></td>
-        <td><%= parcel.taxable_building %></td>
-        <td><%= parcel.taxable_land %></td>
-        <td><%= parcel.market_value %></td>
-        <td><%= parcel.zip.try(:name) %></td>
-        <td><%= link_to 'Show', parcel %></td>
-        <td><%= link_to 'Edit', edit_parcel_path(parcel) %></td>
-        <td><%= link_to 'Destroy', parcel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @parcels.each do |parcel| %>
+          <tr>
+            <td><%= parcel.parcel_number %></td>
+            <td><%= parcel.taxable_building %></td>
+            <td><%= parcel.taxable_land %></td>
+            <td><%= parcel.market_value %></td>
+            <td><%= parcel.zip.try(:name) %></td>
+            <td><%= link_to 'Show', parcel %></td>
+            <td><%= link_to 'Edit', edit_parcel_path(parcel) %></td>
+            <td><%= link_to 'Destroy', parcel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 

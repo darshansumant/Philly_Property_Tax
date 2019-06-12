@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :zips
+  resources :zips do
+    collection { post :import }
+  end
 
   resources :parcels do
     collection { post :import }

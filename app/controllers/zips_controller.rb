@@ -61,6 +61,11 @@ class ZipsController < ApplicationController
     end
   end
 
+  def import
+    Zip.import(params[:file])
+    redirect_to zips_path, notice: "Zips added successfully"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_zip
