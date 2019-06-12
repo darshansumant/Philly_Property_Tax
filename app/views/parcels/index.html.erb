@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Welcome to the Philadelphia Property Tax App</h1>
+
 <% Zip.all.each do |b| %>
   <%= link_to b.name, parcels_path(zip_code: b.id) %>
   <% end %>
