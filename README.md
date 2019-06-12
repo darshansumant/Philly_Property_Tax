@@ -2,7 +2,7 @@
 
 Ruby on Rails App for Citizen Insight into Philadelphia Property Tax Assessments
 
-### *This app is a work in progress, please share your feedback through [email](mailto:darshan.sumant@gmail.com)*
+##### *This app is a work in progress, please share your feedback through [email](mailto:darshan.sumant@gmail.com).*
 
 ---
 
@@ -30,6 +30,6 @@ For the interim, due to the database size restrictions on Heroku, the data has b
 
 ## References
 
-This app was built primarily as a project for the [Civic Technology course](https://abhinemani.com/civictechcourse/) at The University of Chicago.
+This app was built primarily as a project for the [Civic Technology course](https://abhinemani.com/civictechcourse/) at The University of Chicago by [Abhi Nemani](https://abhinemani.com/).
 
 An invaluable resource for the project has been the [Ruby on Rails tutorial by Clara Raubertas](https://pacific-garden-68717.herokuapp.com/).
