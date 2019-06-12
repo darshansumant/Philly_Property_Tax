@@ -69,6 +69,11 @@ class ParcelsController < ApplicationController
     end
   end
 
+  def import
+    Parcel.import(params[:file])
+    redirect_to parcels_path, notice: "Parcels added successfully"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_parcel

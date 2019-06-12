@@ -21,10 +21,12 @@ df_subset.taxable_building = df_subset.taxable_building.astype(int)
 df_subset.taxable_land = df_subset.taxable_land.astype(int)
 df_subset.market_value = df_subset.market_value.astype(int)
 
-# Clean Zip Code to keep only the first 5 digits
+# Clean Zip Code to keep only the first 5 digits, ignore NaNs & error Zips
 df_subset['zip_code'] = df_subset.zip_code.str[:5].astype(str)
+chosen_zips = df_subset.zip_code.value_counts()[:-10]
 
 # Output as CSV files to be import into the App Database
-df_subset.to_csv('parcels_data.csv', index=False)
-df_subset.zip_code.value_counts()[:-7].to_csv('zips_data.csv', header=['Description'],
-                                              index=True, index_label='Name')
+df_subset[df_subset.zip_code.isin(list(chosen_zips.index))].to_csv('parcels_data.csv',
+                                                                   index=False)
+chosen_zips.to_csv('zips_data.csv', header=['Description'],
+                   index=True, index_label='Name')

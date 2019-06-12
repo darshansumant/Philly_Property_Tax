@@ -36,4 +36,10 @@
 
 <br>
 
+<h3>Import Parcels</h3>
+<%= form_tag import_parcels_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Parcels" %>
+<% end %>
+
 <%= link_to 'New Parcel', new_parcel_path %>
