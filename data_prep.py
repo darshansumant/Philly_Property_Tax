@@ -24,9 +24,15 @@ df_subset.market_value = df_subset.market_value.astype(int)
 # Clean Zip Code to keep only the first 5 digits, ignore NaNs & error Zips
 df_subset['zip_code'] = df_subset.zip_code.str[:5].astype(str)
 chosen_zips = df_subset.zip_code.value_counts()[:-10]
+chosen_zips = chosen_zips[chosen_zips.index != 'nan']
+chosen_parcels = df_subset[df_subset.zip_code.isin(list(chosen_zips.index))]
 
 # Output as CSV files to be import into the App Database
-df_subset[df_subset.zip_code.isin(list(chosen_zips.index))].to_csv('parcels_data.csv',
-                                                                   index=False)
+chosen_parcels.to_csv('parcels_data.csv', index=False)
 chosen_zips.to_csv('zips_data.csv', header=['description'],
                    index=True, index_label='name')
+
+# Ufniformly sample all ZIPs to get 4000-odd parcels (Heroku database size limited)
+grouped = chosen_parcels.groupby('zip_code')
+grouped.apply(lambda x: x.sample(n=100, replace=True)).to_csv('parcels_data_truncated.csv',
+                                                              index=False)
