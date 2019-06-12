@@ -4,6 +4,8 @@ Ruby on Rails App for Citizen Insight into Philadelphia Property Tax Assessments
 
 # README
 
+*This app is a work in progress, please share your feedback through email [mailto:darshan.sumant@gmail.com]*
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
