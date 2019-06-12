@@ -33,6 +33,3 @@
 # Ignore the jupyter notebook used for data processing
 *.ipynb
 /.ipynb_checkpoints/*
-
-# Ignore the raw data files
-*.csv
